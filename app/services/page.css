@@ -1,0 +1,66 @@
+.service-page {
+  @apply px-10 py-20;
+}
+
+.service-page-title {
+  @apply text-3xl md:text-5xl font-bold text-center text-basic mb-10;
+}
+
+.service-page-grid {
+  @apply grid  grid-cols-1 md:grid-cols-6  min-h-[70vh];
+}
+
+.service-page-grid-container {
+    @apply grid  md:grid-rows-3  min-h-[70vh];
+  }
+
+.service-page-card-container {
+  @apply max-h-[50vh];
+}
+
+.service-page-card {
+    @apply mx-2 my-6 min-h-[30vh] pb-10 bg-basic rounded-lg shadow-lg text-center text-white transform cursor-pointer relative transition-transform duration-300 ease-in-out;
+  }
+  
+
+.service-page-card-icon {
+  @apply mx-auto w-24 h-24 object-contain transition-all duration-300;
+}
+
+.service-page-card-title {
+  @apply text-base md:text-lg font-semibold mx-4;
+}
+
+.service-page-card-text {
+  @apply text-white text-sm px-4 pt-4 opacity-0 max-h-0 overflow-hidden transition-all duration-500;
+}
+
+/* Hover efekt tylko gdy najedziesz na kartę */
+.service-page-card-active {
+  @apply   scale-125 shadow-[4px_4px_0px_#0f3838] transition-transform duration-300;
+}
+
+.service-page-card-deactive {
+  @apply  scale-[0.8];
+}
+
+.service-page-card:hover .service-page-card-text {
+  @apply opacity-100 max-h-40 w-full;
+}
+
+.translate-left {
+    @apply -translate-x-[5vh];
+  }
+  
+.translate-right {
+    @apply translate-x-[30%];
+  }
+  
+.translate-up {
+    @apply -translate-y-[30%];
+  }
+  
+.translate-down {
+    @apply translate-y-[30%];
+  }
+  

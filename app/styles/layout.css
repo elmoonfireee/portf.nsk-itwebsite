@@ -1,0 +1,28 @@
+.layout {
+  @apply grid min-h-screen w-full bg-white font-sans;
+  grid-template-rows: auto 1fr auto;
+}
+
+
+  
+  .header {
+    @apply grid 
+           grid-cols-1 md:grid-cols-[1fr_3fr_1fr]
+           gap-4
+           p-4 md:p-4
+           bg-basic text-white text-center md:text-left 
+           text-base md:text-lg;
+  }
+  
+  .main {
+    @apply w-full px-4 md:px-10;
+  }
+  
+  
+  
+  .footer {
+    @apply p-4 bg-basic text-center text-sm text-white;
+  }
+  
+  
+  

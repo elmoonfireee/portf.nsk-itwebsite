@@ -1,0 +1,14 @@
+
+
+
+    {
+      "title": "Odzyskiwanie danych",
+      "text": "Odzyskujemy dane z uszkodzonych dysków twardych, pendrive'ów i kart pamięci. Ratujemy ważne pliki i dokumenty.",
+      "icon": "./icons/data_recovery.png"
+    },
+
+    {
+      "title": "Serwis i czyszczenie sprzętu",
+      "text": "Profesjonalne czyszczenie wnętrza komputerów i laptopów z kurzu oraz wymiana pasty termoprzewodzącej dla lepszej wydajności.",
+      "icon": "./icons/cleaning.png"
+    }
