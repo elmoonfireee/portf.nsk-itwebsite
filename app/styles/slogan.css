@@ -3,7 +3,7 @@
 }
 
 .slogan-image {
-  @apply animate-slide-in-top relative mx-8 mb-8 mt-20 md:mt-[10vh] md:mx-[30vh] md:h-[50vh]; /* lub np. h-[50vh] */
+  @apply animate-slide-in-top relative mx-8 mb-8 mt-20 xl:mt-[10vh] xl:mx-[30vh] xl:h-[50vh]; 
 }
 
 

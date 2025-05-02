@@ -60,4 +60,23 @@
 .translate-down {
   @apply translate-y-[1rem] transition-transform duration-300;
 }
-  
+
+.row-move-up {
+  @apply -translate-y-[5vh] transition-transform duration-300;
+}
+
+.row-move-down {
+  @apply translate-y-[10vh] transition-transform duration-300;
+}
+
+/* mocniejsze przesunięcia */
+
+.translate-left-strong {
+  @apply -translate-x-[10vh] transition-transform duration-300;
+}
+
+.translate-right-strong {
+  @apply translate-x-[10vh] transition-transform duration-300;
+}
+
+

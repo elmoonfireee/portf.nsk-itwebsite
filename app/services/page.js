@@ -7,6 +7,7 @@ import './page.css';
 export default function ServicesPage() {
   const [features, setFeatures] = useState([]);
   const [hoveredCardIndex, setHoveredCardIndex] = useState(null);
+  const [hoveredRowIndex, setHoveredRowIndex] = useState(null);
 
   useEffect(() => {
     fetch('/data/service_page.json')
@@ -26,39 +27,60 @@ export default function ServicesPage() {
       <h1 className="service-page-title">Nasze usługi</h1>
       <div className="service-page-grid-container">
         {chunkArray(features, 6).map((row, rowIndex) => (
-          <div key={rowIndex} className="service-page-grid">
+          <div
+            key={rowIndex}
+            className={`service-page-grid ${
+              hoveredRowIndex !== null && hoveredRowIndex !== rowIndex
+                ? rowIndex < hoveredRowIndex
+                  ? 'row-move-up'
+                  : 'row-move-down'
+                : ''
+            }`}
+            onMouseEnter={() => setHoveredRowIndex(rowIndex)}
+            onMouseLeave={() => setHoveredRowIndex(null)}
+          >
             {row.map((feature, indexInRow) => {
               const index = rowIndex * 6 + indexInRow;
               const isActive = hoveredCardIndex === index;
+              const isInActiveRow = hoveredRowIndex === rowIndex;
               const isAnyHovered = hoveredCardIndex !== null;
 
-              const activeRow = Math.floor(hoveredCardIndex / 6);
               const activeCol = hoveredCardIndex % 6;
               const col = indexInRow;
-              const row = rowIndex;
 
-              const isLeft = col < activeCol && row === activeRow;
-              const isRight = col > activeCol && row === activeRow;
-              const isAbove = row < activeRow;
-              const isBelow = row > activeRow;
+              let dynamicStyle = {};
 
-              let moveClass = '';
-              if (isAnyHovered && !isActive) {
-                if (isLeft) moveClass = 'translate-left';
-                else if (isRight) moveClass = 'translate-right';
-                else if (isAbove) moveClass = 'translate-up';
-                else if (isBelow) moveClass = 'translate-down';
+              if (isAnyHovered && isInActiveRow && !isActive) {
+                const distance = Math.abs(col - activeCol);
+                const delay = distance * 50; // 50ms za każdy krok
+
+                if (col === 0) {
+                  dynamicStyle = {
+                    transform: 'translateX(-7vh)',
+                    transition: `transform 0.3s ease-in-out ${delay}ms`,
+                  };
+                } else if (col === 5) {
+                  dynamicStyle = {
+                    transform: 'translateX(7vh)',
+                    transition: `transform 0.3s ease-in-out ${delay}ms`,
+                  };
+                } else {
+                  const direction = col < activeCol ? -1 : 1;
+                  dynamicStyle = {
+                    transform: `translateX(${direction * 7}vh)`,
+                    transition: `transform 0.3s ease-in-out ${delay}ms`,
+                  };
+                }
               }
-              
 
               return (
-                <div  key={index}>
+                <div key={index}>
                   <div
                     className={`service-page-card
                       ${isActive ? 'service-page-card-active z-10' : ''}
-                      ${isAnyHovered && !isActive ? 'service-page-card-deactive' : ''}
-                      ${moveClass}
+                      ${isAnyHovered && isInActiveRow && !isActive ? 'service-page-card-deactive' : ''}
                     `}
+                    style={dynamicStyle}
                     onMouseEnter={() => setHoveredCardIndex(index)}
                     onMouseLeave={() => setHoveredCardIndex(null)}
                   >

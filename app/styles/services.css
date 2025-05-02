@@ -19,15 +19,15 @@
 }
 
 .service-title {
-  @apply text-xl font-bold mb-7;
+  @apply text-white text-xl font-bold mb-7;
 }
 
 .service-text {
-  @apply text-sm;
+  @apply text-white text-sm;
 }
 
 .service-more {
-  @apply block shadow-[4px_4px_0px_#0f3838] bg-basic border-4 border-basic 
+  @apply text-white block shadow-[4px_4px_0px_#0f3838] bg-basic border-4 border-basic 
   font-bold w-fit mx-auto px-20 py-5 rounded-lg
   hover:scale-95 transform transition duration-300;
 
