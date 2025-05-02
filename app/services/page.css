@@ -7,7 +7,7 @@
 }
 
 .service-page-grid {
-  @apply grid  grid-cols-1 md:grid-cols-6  min-h-[70vh];
+  @apply grid  grid-cols-1 md:grid-cols-6  min-h-[20vh];
 }
 
 .service-page-grid-container {
@@ -44,23 +44,20 @@
   @apply  scale-[0.8];
 }
 
-.service-page-card:hover .service-page-card-text {
-  @apply opacity-100 max-h-40 w-full;
-}
 
 .translate-left {
     @apply -translate-x-[5vh];
   }
   
 .translate-right {
-    @apply translate-x-[30%];
+    @apply translate-x-[5vh];
   }
   
 .translate-up {
-    @apply -translate-y-[30%];
-  }
-  
+  @apply -translate-y-[1rem] transition-transform duration-300;
+}
+
 .translate-down {
-    @apply translate-y-[30%];
-  }
+  @apply translate-y-[1rem] transition-transform duration-300;
+}
   

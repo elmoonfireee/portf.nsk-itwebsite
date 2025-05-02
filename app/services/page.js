@@ -15,64 +15,69 @@ export default function ServicesPage() {
       .catch((err) => console.error('Błąd ładowania usług:', err));
   }, []);
 
+  function chunkArray(arr, size) {
+    return Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
+      arr.slice(i * size, i * size + size)
+    );
+  }
+
   return (
     <section className="service-page">
       <h1 className="service-page-title">Nasze usługi</h1>
       <div className="service-page-grid-container">
-      <div className="service-page-grid">
-  {features.map((feature, index) => {
-    const isActive = hoveredCardIndex === index;
-    const isAnyHovered = hoveredCardIndex !== null;
+        {chunkArray(features, 6).map((row, rowIndex) => (
+          <div key={rowIndex} className="service-page-grid">
+            {row.map((feature, indexInRow) => {
+              const index = rowIndex * 6 + indexInRow;
+              const isActive = hoveredCardIndex === index;
+              const isAnyHovered = hoveredCardIndex !== null;
 
-    // pozycja karty w siatce
-    const cols = 6; // zakładamy md:grid-cols-6
-    const row = Math.floor(index / cols);
-    const col = index % cols;
+              const activeRow = Math.floor(hoveredCardIndex / 6);
+              const activeCol = hoveredCardIndex % 6;
+              const col = indexInRow;
+              const row = rowIndex;
 
-    const activeRow = Math.floor(hoveredCardIndex / cols);
-    const activeCol = hoveredCardIndex % cols;
+              const isLeft = col < activeCol && row === activeRow;
+              const isRight = col > activeCol && row === activeRow;
+              const isAbove = row < activeRow;
+              const isBelow = row > activeRow;
 
-    // obliczamy kierunek przesunięcia
-    const isLeft = col < activeCol && row === activeRow;
-    const isRight = col > activeCol && row === activeRow;
-    const isAbove = row < activeRow;
-    const isBelow = row > activeRow;
+              let moveClass = '';
+              if (isAnyHovered && !isActive) {
+                if (isLeft) moveClass = 'translate-left';
+                else if (isRight) moveClass = 'translate-right';
+                else if (isAbove) moveClass = 'translate-up';
+                else if (isBelow) moveClass = 'translate-down';
+              }
+              
 
-    let moveClass = '';
-    if (isAnyHovered && !isActive) {
-      if (isLeft) moveClass = 'translate-left';
-      else if (isRight) moveClass = 'translate-right';
-      else if (isAbove) moveClass = 'translate-up';
-      else if (isBelow) moveClass = 'translate-down';
-    }
-    
-
-    return (
-      <div className="service-page-card-container" key={index}>
-        <div
-          className={`service-page-card
-            ${isActive ? 'service-page-card-active z-10' : ''}
-            ${isAnyHovered && !isActive ? 'service-page-card-deactive' : ''}
-            ${moveClass}
-          `}
-          onMouseEnter={() => setHoveredCardIndex(index)}
-          onMouseLeave={() => setHoveredCardIndex(null)}
-        >
-          <Image
-            src={feature.icon}
-            alt={feature.title}
-            width={300}
-            height={300}
-            className="service-page-card-icon"
-          />
-          <h3 className="service-page-card-title">{feature.title}</h3>
-          <p className="service-page-card-text">{feature.text}</p>
-        </div>
+              return (
+                <div  key={index}>
+                  <div
+                    className={`service-page-card
+                      ${isActive ? 'service-page-card-active z-10' : ''}
+                      ${isAnyHovered && !isActive ? 'service-page-card-deactive' : ''}
+                      ${moveClass}
+                    `}
+                    onMouseEnter={() => setHoveredCardIndex(index)}
+                    onMouseLeave={() => setHoveredCardIndex(null)}
+                  >
+                    <Image
+                      src={feature.icon}
+                      alt={feature.title}
+                      width={300}
+                      height={300}
+                      className="service-page-card-icon"
+                    />
+                    <h3 className="service-page-card-title">{feature.title}</h3>
+                    <p className="service-page-card-text">{feature.text}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        ))}
       </div>
-    );
-  })}
-</div>
-</div>
     </section>
   );
 }
