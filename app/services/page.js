@@ -12,37 +12,72 @@ export default function ServicesPage() {
   useEffect(() => {
     fetch('/data/service_page.json')
       .then((res) => res.json())
-      .then((data) => setFeatures(data))
+      .then((data) => {
+        setFeatures(data);
+
+        const cardsPerRow = 6;
+
+        data.forEach((section, i) => {
+          const cardCount = section.items.length;
+          const fullRows = Math.floor(cardCount / cardsPerRow);
+          const remaining = cardCount % cardsPerRow;
+          const usedRows = fullRows + (remaining > 0 ? 1 : 0);
+
+          console.log(`📂 Sekcja ${i + 1}: ${section.title}`);
+          console.log(`🔢 Liczba kart: ${cardCount}`);
+          console.log(`🧱 Pełne rzędy (po 6): ${fullRows}`);
+          console.log(`➕ Pozostałe karty: ${remaining}`);
+          console.log(`🧮 Użyte rzędy razem: ${usedRows}`);
+          console.log('--------------------------');
+        });
+      })
       .catch((err) => console.error('Błąd ładowania usług:', err));
   }, []);
-
-  function chunkArray(arr, size) {
-    return Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
-      arr.slice(i * size, i * size + size)
-    );
-  }
 
   return (
     <section className="service-page">
       <h1 className="service-page-title">Nasze usługi</h1>
-      <div className="service-page-grid-container">
-        {chunkArray(features, 6).map((row, rowIndex) => (
+
+      <div className="service-page-description-box">
+        <div className="service-page-description">
+          Cennik usług nie jest podany na stronie, ponieważ każda usterka czy
+          zlecenie jest inne i wymaga indywidualnego podejścia. Oferujemy
+          bezpłatną diagnostykę, po której przedstawiamy szczegółową wycenę
+          usługi. Dzięki temu masz pewność, że płacisz tylko za realną pracę i
+          faktycznie potrzebne działania – bez ukrytych kosztów i niepotrzebnych
+          usług.
+        </div>
+      </div>
+
+      {features.map((section, sectionIndex) => (
+        <div className="service-page-grid-container" key={sectionIndex}>
           <div
-            key={rowIndex}
-            className={`service-page-grid ${
-              hoveredRowIndex !== null && hoveredRowIndex !== rowIndex
-                ? rowIndex < hoveredRowIndex
+            className={`service-page-subtitle-box ${
+              hoveredRowIndex !== null && hoveredRowIndex !== sectionIndex
+                ? sectionIndex < hoveredRowIndex
                   ? 'row-move-up'
                   : 'row-move-down'
                 : ''
             }`}
-            onMouseEnter={() => setHoveredRowIndex(rowIndex)}
+          >
+            <h2 className="service-page-subtitle">{section.title}</h2>
+          </div>
+
+          <div
+            className={`service-page-grid-columns ${
+              hoveredRowIndex !== null && hoveredRowIndex !== sectionIndex
+                ? sectionIndex < hoveredRowIndex
+                  ? 'row-move-up'
+                  : 'row-move-down'
+                : ''
+            }`}
+            onMouseEnter={() => setHoveredRowIndex(sectionIndex)}
             onMouseLeave={() => setHoveredRowIndex(null)}
           >
-            {row.map((feature, indexInRow) => {
-              const index = rowIndex * 6 + indexInRow;
+            {section.items.map((feature, indexInRow) => {
+              const index = sectionIndex * 6 + indexInRow;
               const isActive = hoveredCardIndex === index;
-              const isInActiveRow = hoveredRowIndex === rowIndex;
+              const isInActiveRow = hoveredRowIndex === sectionIndex;
               const isAnyHovered = hoveredCardIndex !== null;
 
               const activeCol = hoveredCardIndex % 6;
@@ -52,14 +87,14 @@ export default function ServicesPage() {
 
               if (isAnyHovered && isInActiveRow && !isActive) {
                 const distance = Math.abs(col - activeCol);
-                const delay = distance * 50; // 50ms za każdy krok
+                const delay = distance * 50;
 
                 if (col === 0) {
                   dynamicStyle = {
                     transform: 'translateX(-7vh)',
                     transition: `transform 0.3s ease-in-out ${delay}ms`,
                   };
-                } else if (col === 5) {
+                } else if (col === section.items.length - 1) {
                   dynamicStyle = {
                     transform: 'translateX(7vh)',
                     transition: `transform 0.3s ease-in-out ${delay}ms`,
@@ -98,8 +133,8 @@ export default function ServicesPage() {
               );
             })}
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </section>
   );
 }

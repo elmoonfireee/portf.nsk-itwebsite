@@ -1,42 +1,37 @@
 [
-    {
-      "title": "Naprawa komputerów i laptopów",
-      "text": "Szybka diagnostyka i naprawa usterek sprzętowych oraz systemowych. Przywracamy Twoje urządzenie do pełnej sprawności.",
-      "icon": "/icons/pc_service.png"
-    },
-    {
-      "title": "Usuwanie wirusów i zabezpieczanie systemu",
-      "text": "Profesjonalne usuwanie wirusów, malware i oprogramowania szpiegującego. Instalacja skutecznych programów antywirusowych i zabezpieczeń.",
-      "icon": "/icons/security.png"
-    },
-    {
-      "title": "Instalacja i konfiguracja oprogramowania",
-      "text": "Pomagamy w instalacji systemów operacyjnych Windows, Linux oraz dowolnego oprogramowania użytkowego lub specjalistycznego.",
-      "icon": "/icons/soft_conf.png"
-    },
-
-    {
+  {
+    "title": "Hardware",
+    "items": [
+      {
+        "title": "Naprawa komputerów i laptopów",
+        "text": "Szybka diagnostyka i naprawa usterek sprzętowych oraz systemowych. Przywracamy Twoje urządzenie do pełnej sprawności.",
+        "icon": "/icons/pc_service.png"
+      },
+      {
         "title": "Modernizacja komputerów i laptopów",
         "text": "Doradzamy i wykonujemy modernizację sprzętu: rozbudowa pamięci RAM, wymiana dysku na SSD, instalacja nowych komponentów.",
         "icon": "/icons/upgrade.png"
       },
-    {
-      "title": "Odzyskiwanie danych",
-      "text": "Odzyskujemy dane z uszkodzonych dysków twardych, pendrive'ów i kart pamięci. Ratujemy ważne pliki i dokumenty.",
-      "icon": "/icons/data_recovery.png"
-    },
-
-    {
-      "title": "Serwis i czyszczenie sprzętu",
-      "text": "Profesjonalne czyszczenie wnętrza komputerów i laptopów z kurzu oraz wymiana pasty termoprzewodzącej dla lepszej wydajności.",
-      "icon": "/icons/cleaning.png"
-    },
-
-    {
-        "title": "Naprawa komputerów i laptopów",
-        "text": "Szybka diagnostyka i naprawa usterek sprzętowych oraz systemowych. Przywracamy Twoje urządzenie do pełnej sprawności.",
-        "icon": "/icons/pc_service.png"
+      {
+        "title": "Serwis i czyszczenie sprzętu",
+        "text": "Profesjonalne czyszczenie wnętrza komputerów i laptopów z kurzu oraz wymiana pasty termoprzewodzącej dla lepszej wydajności.",
+        "icon": "/icons/cleaning.png"
       },
+      {
+        "title": "Serwis i czyszczenie sprzętu",
+        "text": "Profesjonalne czyszczenie wnętrza komputerów i laptopów z kurzu oraz wymiana pasty termoprzewodzącej dla lepszej wydajności.",
+        "icon": "/icons/cleaning.png"
+      },
+      {
+        "title": "Serwis i czyszczenie sprzętu",
+        "text": "Profesjonalne czyszczenie wnętrza komputerów i laptopów z kurzu oraz wymiana pasty termoprzewodzącej dla lepszej wydajności.",
+        "icon": "/icons/cleaning.png"
+      }
+    ]
+  },
+  {
+    "title": "Software",
+    "items": [
       {
         "title": "Usuwanie wirusów i zabezpieczanie systemu",
         "text": "Profesjonalne usuwanie wirusów, malware i oprogramowania szpiegującego. Instalacja skutecznych programów antywirusowych i zabezpieczeń.",
@@ -47,33 +42,19 @@
         "text": "Pomagamy w instalacji systemów operacyjnych Windows, Linux oraz dowolnego oprogramowania użytkowego lub specjalistycznego.",
         "icon": "/icons/soft_conf.png"
       },
-  
-      {
-          "title": "Modernizacja komputerów i laptopów",
-          "text": "Doradzamy i wykonujemy modernizację sprzętu: rozbudowa pamięci RAM, wymiana dysku na SSD, instalacja nowych komponentów.",
-          "icon": "/icons/upgrade.png"
-        },
       {
         "title": "Odzyskiwanie danych",
         "text": "Odzyskujemy dane z uszkodzonych dysków twardych, pendrive'ów i kart pamięci. Ratujemy ważne pliki i dokumenty.",
         "icon": "/icons/data_recovery.png"
-      },
-  
-      {
-        "title": "Serwis i czyszczenie sprzętu",
-        "text": "Profesjonalne czyszczenie wnętrza komputerów i laptopów z kurzu oraz wymiana pasty termoprzewodzącej dla lepszej wydajności.",
-        "icon": "/icons/cleaning.png"
       }
+    ]
+  },
 
-      ,
-
-    {
-        "title": "Naprawa komputerów i laptopów",
-        "text": "Szybka diagnostyka i naprawa usterek sprzętowych oraz systemowych. Przywracamy Twoje urządzenie do pełnej sprawności.",
-        "icon": "/icons/pc_service.png"
-      },
+  {
+    "title": "TEST",
+    "items": [
       {
-        "title": "Usuwanie wirusów i zabezpieczanie systemu",
+        "title": "TEST",
         "text": "Profesjonalne usuwanie wirusów, malware i oprogramowania szpiegującego. Instalacja skutecznych programów antywirusowych i zabezpieczeń.",
         "icon": "/icons/security.png"
       },
@@ -82,24 +63,27 @@
         "text": "Pomagamy w instalacji systemów operacyjnych Windows, Linux oraz dowolnego oprogramowania użytkowego lub specjalistycznego.",
         "icon": "/icons/soft_conf.png"
       },
-  
-      {
-          "title": "Modernizacja komputerów i laptopów",
-          "text": "Doradzamy i wykonujemy modernizację sprzętu: rozbudowa pamięci RAM, wymiana dysku na SSD, instalacja nowych komponentów.",
-          "icon": "/icons/upgrade.png"
-        },
       {
         "title": "Odzyskiwanie danych",
         "text": "Odzyskujemy dane z uszkodzonych dysków twardych, pendrive'ów i kart pamięci. Ratujemy ważne pliki i dokumenty.",
         "icon": "/icons/data_recovery.png"
       },
-  
       {
-        "title": "Serwis i czyszczenie sprzętu",
-        "text": "Profesjonalne czyszczenie wnętrza komputerów i laptopów z kurzu oraz wymiana pasty termoprzewodzącej dla lepszej wydajności.",
-        "icon": "/icons/cleaning.png"
+        "title": "TEST",
+        "text": "Profesjonalne usuwanie wirusów, malware i oprogramowania szpiegującego. Instalacja skutecznych programów antywirusowych i zabezpieczeń.",
+        "icon": "/icons/security.png"
+      },
+      {
+        "title": "TEST",
+        "text": "Profesjonalne usuwanie wirusów, malware i oprogramowania szpiegującego. Instalacja skutecznych programów antywirusowych i zabezpieczeń.",
+        "icon": "/icons/security.png"
+      },
+      {
+        "title": "TEST",
+        "text": "Profesjonalne usuwanie wirusów, malware i oprogramowania szpiegującego. Instalacja skutecznych programów antywirusowych i zabezpieczeń.",
+        "icon": "/icons/security.png"
       }
-
-  ]
+    ]
+  }
   
-
+]

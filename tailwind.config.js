@@ -7,9 +7,16 @@ module.exports = {
     'animate-slide-in-left',
     'animate-slide-in-right',
     'animate-slide-in-top',
+    'grid-rows-1',
+    'grid-rows-2',
+    'grid-rows-3',
+    'grid-rows-4',
+    'grid-rows-5',
+    'grid-rows-6'
   ],
   theme: {
     extend: {
+      
       colors: {
         basic: '#1D6E6E',
       },

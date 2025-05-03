@@ -1,25 +1,29 @@
 .service-page {
-  @apply px-10 py-20;
+  @apply min-h-screen px-10 py-20;
 }
 
 .service-page-title {
   @apply text-3xl md:text-5xl font-bold text-center text-basic mb-10;
 }
+.service-page-grid-container {
 
-.service-page-grid {
+}
+
+.service-page-grid-rows{
+  
+}
+
+.service-page-grid-columns {
   @apply grid  grid-cols-1 md:grid-cols-6  min-h-[20vh];
 }
 
-.service-page-grid-container {
-    @apply grid  md:grid-rows-3  min-h-[70vh];
-  }
 
 .service-page-card-container {
   @apply max-h-[50vh];
 }
 
 .service-page-card {
-    @apply mx-2 my-6 min-h-[30vh] pb-10 bg-basic rounded-lg shadow-lg text-center text-white transform cursor-pointer relative transition-transform duration-300 ease-in-out;
+    @apply mx-2 my-6 min-h-full bg-basic rounded-lg shadow-lg text-center text-white transform cursor-pointer relative transition-transform duration-300 ease-in-out;
   }
   
 
@@ -31,13 +35,20 @@
   @apply text-base md:text-lg font-semibold mx-4;
 }
 
+.service-page-description-box {
+  @apply mb-10 mt-12 p-2 rounded-[10vh] border border-basic shadow-lg text-center  text-basic ;
+}
+.service-page-description {
+  @apply text-sm md:text-base mx-8 my-4;
+}
+
 .service-page-card-text {
-  @apply text-white text-sm px-4 pt-4 opacity-0 max-h-0 overflow-hidden transition-all duration-500;
+  @apply text-white text-sm px-4 pt-4 opacity-0 overflow-hidden transition-all duration-500;
 }
 
 /* Hover efekt tylko gdy najedziesz na kartę */
 .service-page-card-active {
-  @apply   scale-125 shadow-[4px_4px_0px_#0f3838] transition-transform duration-300;
+  @apply  scale-125 shadow-[4px_4px_0px_#0f3838] transition-transform duration-300;
 }
 
 .service-page-card-deactive {
@@ -45,38 +56,37 @@
 }
 
 
-.translate-left {
-    @apply -translate-x-[5vh];
-  }
-  
-.translate-right {
-    @apply translate-x-[5vh];
-  }
-  
-.translate-up {
-  @apply -translate-y-[1rem] transition-transform duration-300;
+.service-page-subtitle-box {
+  @apply mb-10 mt-12 p-2 bg-basic rounded-[10vh] shadow-lg text-center text-white  mx-20;
 }
 
-.translate-down {
-  @apply translate-y-[1rem] transition-transform duration-300;
+.service-page-subtitle {
+  @apply text-2xl md:text-3xl font-semibold text-center text-white;
+}
+
+.service-page-card:hover .service-page-card-text,
+.service-page-card-active .service-page-card-text {
+  @apply opacity-100 max-h-[50vh];
+}
+
+
+/* PRZESUNIECIA */
+.translate-left {
+  @apply -translate-x-[5vh];
+}
+
+.translate-right {
+  @apply translate-x-[5vh];
 }
 
 .row-move-up {
-  @apply -translate-y-[5vh] transition-transform duration-300;
+@apply -translate-y-[5vh] transition-transform duration-300;
 }
 
 .row-move-down {
-  @apply translate-y-[10vh] transition-transform duration-300;
+@apply translate-y-[10vh] transition-transform duration-300;
 }
 
-/* mocniejsze przesunięcia */
-
-.translate-left-strong {
-  @apply -translate-x-[10vh] transition-transform duration-300;
+.footer {
+  @apply mt-10;
 }
-
-.translate-right-strong {
-  @apply translate-x-[10vh] transition-transform duration-300;
-}
-
-

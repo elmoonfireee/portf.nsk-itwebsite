@@ -13,7 +13,7 @@
 
 
 .slogan-text-wrapper {
-  @apply mb-[70vh] col-start-2 row-start-1 text-center min-h-[150px] grid place-items-center;
+  @apply md:mb-[70vh] col-start-2 row-start-1 text-center min-h-[150px] grid place-items-center;
 }
 
 .slogan-text {

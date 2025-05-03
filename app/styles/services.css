@@ -1,16 +1,16 @@
 .service-container {
-  @apply  grid grid-rows-1 gap-6 ;
+  @apply min-h-screen grid grid-rows-1 gap-6 mb-20 md:mb-2;
 }
 .services-grid {
-  @apply  px-10 grid grid-cols-1 md:grid-cols-2 gap-6;
+  @apply  md:px-10 grid grid-cols-2 md:grid-cols-2 gap-6;
 }
 
 .service-card-left {
-  @apply bg-basic p-10 md:p-8 rounded-lg shadow-lg text-center opacity-0 transition-opacity duration-300;
+  @apply bg-basic md:p-10 md:p-8 rounded-lg shadow-lg text-center opacity-0 transition-opacity duration-300;
 }
 
 .service-card-right {
-  @apply bg-basic p-10 md:p-8 rounded-lg shadow-lg text-center opacity-0 transition-opacity duration-300;
+  @apply bg-basic md:p-10 md:p-8 rounded-lg shadow-lg text-center opacity-0 transition-opacity duration-300;
 }
 
 
@@ -19,16 +19,16 @@
 }
 
 .service-title {
-  @apply text-white text-xl font-bold mb-7;
+  @apply text-white font-bold pb-4 mx-4 md:text-xl md:mb-7;
 }
 
 .service-text {
-  @apply text-white text-sm;
+  @apply text-white text-sm hidden md:block;
 }
 
 .service-more {
   @apply text-white block shadow-[4px_4px_0px_#0f3838] bg-basic border-4 border-basic 
-  font-bold w-fit mx-auto px-20 py-5 rounded-lg
+  font-bold w-fit mx-auto px-10 md:px-20 py-5 rounded-lg
   hover:scale-95 transform transition duration-300;
 
 }
