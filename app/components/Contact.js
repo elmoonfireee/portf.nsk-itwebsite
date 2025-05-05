@@ -91,18 +91,26 @@ export default function Contact() {
         method: 'POST',
         body: data,
       });
-
+      
       if (res.ok) {
-        setStatus('Formularz został wysłany! ');
+        setStatus('Formularz został wysłany!');
         setStatusType('success');
         setFormData({ name: '', phone: '', email: '', message: '', files: [] });
+      
         if (fileInputRef.current) {
-            fileInputRef.current.value = ''; // reset inputa plików
-          }
+          fileInputRef.current.value = ''; // reset inputa plików
+        }
       } else {
-        setStatus('Błąd przy wysyłaniu formularza. Napisz do nas na e-mail lub zadzwoń.');
+        let errorMessage = 'Błąd przy wysyłaniu formularza. Napisz do nas na e-mail lub zadzwoń.';
+        if (res.status === 413) {
+          const json = await res.json();
+          errorMessage = json.error || 'Plik jest zbyt duży. Maksymalna dozwolona wielkość to 20 MB.';
+        }
+      
+        setStatus(errorMessage);
         setStatusType('error');
       }
+      
     } catch (err) {
       console.error('Błąd sieci:', err);
       setStatus('Błąd połączenia z serwerem. Napisz do nas na e-mail lub zadzwoń.');

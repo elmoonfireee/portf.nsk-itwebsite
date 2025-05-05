@@ -13,20 +13,26 @@ export default async function handler(req, res) {
     return res.status(405).send('Method Not Allowed');
   }
 
-  const form = new IncomingForm({ multiples: true, maxFileSize: 20 * 1024 * 1024 });
+  const form = new IncomingForm({ multiples: true, maxTotalFileSize: 20 * 1024 * 1024 });
 
   form.parse(req, async (err, fields, files) => {
     if (err) {
       console.error('❌ Błąd formularza:', err);
-      return res.status(500).send('Błąd formularza');
+
+      // Sprawdzenie błędu przekroczenia limitu pliku
+      if (err.code === 1009) {
+        return res
+          .status(413)
+          .json({ error: 'Plik jest zbyt duży. Maksymalna dozwolona wielkość to 20 MB.' });
+      }
+
+      return res.status(500).json({ error: 'Błąd formularza' });
     }
 
     const { name, email, phone, message } = fields;
     const fileList = files?.file
-  ? (Array.isArray(files.file) ? files.file : [files.file])
-  : [];
-
-    console.log(files)
+      ? (Array.isArray(files.file) ? files.file : [files.file])
+      : [];
 
     const attachments = fileList.filter(Boolean).map(file => ({
       filename: file.originalFilename,
@@ -58,7 +64,7 @@ Wiadomość: ${message}
       res.status(200).send('OK');
     } catch (error) {
       console.error('❌ Błąd wysyłki:', error);
-      res.status(500).send('Błąd wysyłki wiadomości');
+      res.status(500).json({ error: 'Błąd wysyłki wiadomości' });
     }
   });
 }

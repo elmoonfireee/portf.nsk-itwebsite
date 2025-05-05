@@ -51,6 +51,7 @@ export default function Slogan() {
       disableOnInteraction: false,
     }}
     className="slogan"
+    allowTouchMove={false}
   >
     {titles.map((title, index) => (
       <SwiperSlide key={index}>

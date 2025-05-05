@@ -1,10 +1,10 @@
 .contact-section {
-    @apply min-h-screen mb-20 md:h-screen 
+    @apply min-h-screen mb-20 md:min-h-screen 
     grid grid-cols-1 md:grid-cols-2 gap-8 md:px-10  items-center;
   }
   
   .contact-info {
-    @apply px-10 md:mt-10 md:mb-60 md:p-40 text-basic text-lg leading-relaxed opacity-0;
+    @apply md:px-10 md:mt-10 md:mb-60 md:p-40 text-basic text-lg leading-relaxed opacity-0;
   }
   
   .contact-info h2 {
@@ -58,7 +58,7 @@
 
   /* FORM ALERTS */
   .form-alert {
-    @apply col-start-2 mb-2 mx-10 rounded-lg text-center transition-all duration-300
+    @apply  mb-2 mx-10 rounded-lg text-center transition-all duration-300
     border-4 border-basic rounded-lg shadow-lg
     animate-flash;
   }

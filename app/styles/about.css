@@ -3,7 +3,7 @@
 }
 
 .about-image {
-  @apply  h-auto md:ml-40 md:mr-40 md:mt-40 opacity-0 border-4 border-basic rounded-lg;
+  @apply  h-auto xl:ml-40 xl:mr-40 xl:mt-40 opacity-0 border-4 border-basic rounded-lg;
 }
 
 
