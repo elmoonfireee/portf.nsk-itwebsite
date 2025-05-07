@@ -2,6 +2,7 @@
 
 import '../styles/header.css';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 
 export default function Header() {
@@ -19,16 +20,18 @@ export default function Header() {
 
   return (
     <header className="header">
-      <div className="logo">
+       <div className="logo">
+      <Link href="/" passHref>
         <Image
-          src={"/logo-NSK.png"}
+          src="/logo-NSK.png"
           alt="Logo"
           width={500}
           height={500}
-          className={"logoImage"}
+          className="logoImage"
           priority
         />
-      </div>
+      </Link>
+    </div>
       <nav className="navbar">
         <a href="/">Strona główna</a>
         <button onClick={() => handleScrollLink('services')}>Usługi</button>

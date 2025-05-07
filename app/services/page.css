@@ -23,11 +23,6 @@
   @apply w-[250px] h-[300px] mx-2 my-6 bg-basic rounded-lg shadow-lg text-center text-white transform cursor-pointer relative transition-transform duration-300 ease-in-out;
 }
 
-
-
-
-.cardClass {}
-
 .service-page-card-icon {
   @apply mx-auto w-24 h-24 object-contain transition-all duration-300;
 }
@@ -69,12 +64,8 @@
   @apply opacity-100 max-h-[50vh];
 }
 
-/* Efekty przesunięcia */
-
-
-
-
-
 .footer {
   @apply mt-10;
 }
+
+
