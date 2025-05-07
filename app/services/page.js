@@ -8,6 +8,7 @@ export default function ServicesPage() {
   const [features, setFeatures] = useState([]);
   const [hoveredCardIndex, setHoveredCardIndex] = useState(null);
   const [hoveredRowIndex, setHoveredRowIndex] = useState(null);
+  const [hoveredGridRowIndex, setHoveredGridRowIndex] = useState(null);
 
   useEffect(() => {
     fetch('/data/service_page.json')
@@ -49,92 +50,132 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      {features.map((section, sectionIndex) => (
-        <div className="service-page-grid-container" key={sectionIndex}>
+      {features.map((section, sectionIndex) => {
+        const cardsPerRow = 6;
+        const rows = [];
+
+        for (let i = 0; i < section.items.length; i += cardsPerRow) {
+          rows.push(section.items.slice(i, i + cardsPerRow));
+        }
+
+        return (
           <div
-            className={`service-page-subtitle-box ${
-              hoveredRowIndex !== null && hoveredRowIndex !== sectionIndex
-                ? sectionIndex < hoveredRowIndex
-                  ? 'row-move-up'
-                  : 'row-move-down'
-                : ''
-            }`}
+            className="service-page-grid-container"
+            key={sectionIndex}
+            style={{
+              transform:
+                hoveredRowIndex !== null && hoveredRowIndex !== sectionIndex
+                  ? sectionIndex < hoveredRowIndex
+                    ? 'translateY(-5vh)'
+                    : 'translateY(5vh)'
+                  : 'translateY(0)',
+              transition: 'transform 0.3s ease-in-out',
+              willChange: 'transform',
+            }}
           >
-            <h2 className="service-page-subtitle">{section.title}</h2>
-          </div>
 
-          <div
-            className={`service-page-grid-columns ${
-              hoveredRowIndex !== null && hoveredRowIndex !== sectionIndex
-                ? sectionIndex < hoveredRowIndex
-                  ? 'row-move-up'
-                  : 'row-move-down'
-                : ''
-            }`}
-            onMouseEnter={() => setHoveredRowIndex(sectionIndex)}
-            onMouseLeave={() => setHoveredRowIndex(null)}
-          >
-            {section.items.map((feature, indexInRow) => {
-              const index = sectionIndex * 6 + indexInRow;
-              const isActive = hoveredCardIndex === index;
-              const isInActiveRow = hoveredRowIndex === sectionIndex;
-              const isAnyHovered = hoveredCardIndex !== null;
+            <div className="service-page-subtitle-box">
+              <h2 className="service-page-subtitle">{section.title}</h2>
+            </div>
 
-              const activeCol = hoveredCardIndex % 6;
-              const col = indexInRow;
+            <div className="service-page-grid-rows">
+              {rows.map((row, rowIndex) => {
+                const isThisRowHovered =
+                  hoveredRowIndex === sectionIndex &&
+                  hoveredGridRowIndex === rowIndex;
 
-              let dynamicStyle = {};
+                const isMovingRow =
+                  hoveredGridRowIndex !== null &&
+                  hoveredRowIndex === sectionIndex &&
+                  hoveredGridRowIndex !== rowIndex;
 
-              if (isAnyHovered && isInActiveRow && !isActive) {
-                const distance = Math.abs(col - activeCol);
-                const delay = distance * 50;
+                const offset = isMovingRow
+                  ? rowIndex < hoveredGridRowIndex
+                    ? '-5vh'
+                    : '5vh'
+                  : '0';
 
-                if (col === 0) {
-                  dynamicStyle = {
-                    transform: 'translateX(-7vh)',
-                    transition: `transform 0.3s ease-in-out ${delay}ms`,
-                  };
-                } else if (col === section.items.length - 1) {
-                  dynamicStyle = {
-                    transform: 'translateX(7vh)',
-                    transition: `transform 0.3s ease-in-out ${delay}ms`,
-                  };
-                } else {
-                  const direction = col < activeCol ? -1 : 1;
-                  dynamicStyle = {
-                    transform: `translateX(${direction * 7}vh)`,
-                    transition: `transform 0.3s ease-in-out ${delay}ms`,
-                  };
-                }
-              }
-
-              return (
-                <div key={index}>
+                return (
                   <div
-                    className={`service-page-card
-                      ${isActive ? 'service-page-card-active z-10' : ''}
-                      ${isAnyHovered && isInActiveRow && !isActive ? 'service-page-card-deactive' : ''}
-                    `}
-                    style={dynamicStyle}
-                    onMouseEnter={() => setHoveredCardIndex(index)}
-                    onMouseLeave={() => setHoveredCardIndex(null)}
+                  key={rowIndex}
+                  className="service-page-grid-columns"  
+                    onMouseEnter={() => {
+                      setHoveredRowIndex(sectionIndex);
+                      setHoveredGridRowIndex(rowIndex);
+                    }}
+                    onMouseLeave={() => {
+                      setHoveredRowIndex(null);
+                      setHoveredGridRowIndex(null);
+                    }}
+                    style={{
+                      transform: `translateY(${offset})`,
+                      transition: 'transform 0.3s ease-in-out',
+                      willChange: 'transform',
+                    }}
                   >
-                    <Image
-                      src={feature.icon}
-                      alt={feature.title}
-                      width={300}
-                      height={300}
-                      className="service-page-card-icon"
-                    />
-                    <h3 className="service-page-card-title">{feature.title}</h3>
-                    <p className="service-page-card-text">{feature.text}</p>
+                    {row.map((feature, indexInRow) => {
+                      const index =
+                        sectionIndex * cardsPerRow +
+                        rowIndex * cardsPerRow +
+                        indexInRow;
+                      const isActive = hoveredCardIndex === index;
+                      const isInActiveRow = isThisRowHovered;
+                      const isAnyHovered = hoveredCardIndex !== null;
+
+                      const activeCol = hoveredCardIndex % cardsPerRow;
+                      const col = indexInRow;
+
+                      let dynamicStyle = {
+                        transform: 'translateX(0)',
+                        transition: 'transform 0.3s ease-in-out',
+                      };
+                      
+                      if (isAnyHovered && isInActiveRow && !isActive) {
+                        const distance = Math.abs(col - activeCol);
+                        const delay = distance * 50;
+                        const direction = col < activeCol ? -1 : 1;
+                        dynamicStyle = {
+                          transform: `translateX(${direction * 7}vh)`,
+                          transition: `transform 0.3s ease-in-out ${delay}ms`,
+                        };
+                      }
+                      
+
+                      return (
+                        <div key={index}>
+                          <div
+                            className={`service-page-card
+                              ${isActive ? 'service-page-card-active z-10' : ''}
+                              ${
+                                isAnyHovered && isInActiveRow && !isActive
+                                  ? 'service-page-card-deactive'
+                                  : ''
+                              }
+                            `}
+                            style={dynamicStyle}
+                            onMouseEnter={() => setHoveredCardIndex(index)}
+                            onMouseLeave={() => setHoveredCardIndex(null)}
+                          >
+                            <Image
+                              src={feature.icon}
+                              alt={feature.title}
+                              width={300}
+                              height={300}
+                              className="service-page-card-icon"
+                            />
+                            <h3 className="service-page-card-title">{feature.title}</h3>
+                            <p className="service-page-card-text">{feature.text}</p>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </section>
   );
 }

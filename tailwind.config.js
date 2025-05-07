@@ -7,12 +7,22 @@ module.exports = {
     'animate-slide-in-left',
     'animate-slide-in-right',
     'animate-slide-in-top',
-    'grid-rows-1',
-    'grid-rows-2',
-    'grid-rows-3',
-    'grid-rows-4',
-    'grid-rows-5',
-    'grid-rows-6'
+    'grid-cols-1',
+    'grid-cols-2',
+    'grid-cols-3',
+    'grid-cols-4',
+    'grid-cols-5',
+    'grid-cols-6',
+    'col-start-1',
+    'col-start-2',
+    'col-start-3',
+    'col-start-4',
+    'col-start-5',
+    'col-start-6',
+    'grid-cols-2',
+    'xl:grid-cols-5',
+    'xl:grid-cols-6',
+    
   ],
   theme: {
     extend: {

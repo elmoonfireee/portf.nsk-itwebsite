@@ -5,27 +5,28 @@
 .service-page-title {
   @apply text-3xl md:text-5xl font-bold text-center text-basic mb-10;
 }
-.service-page-grid-container {
 
+.service-page-grid-container {
+  @apply mb-12;
 }
 
-.service-page-grid-rows{
-  
+.service-page-grid-rows {
+  @apply flex flex-col justify-center items-center gap-4;
 }
 
 .service-page-grid-columns {
-  @apply grid  grid-cols-1 md:grid-cols-6  min-h-[20vh];
+  @apply flex flex-row justify-center items-center min-h-[20vh];
 }
 
-
-.service-page-card-container {
-  @apply max-h-[50vh];
-}
 
 .service-page-card {
-    @apply mx-2 my-6 min-h-full bg-basic rounded-lg shadow-lg text-center text-white transform cursor-pointer relative transition-transform duration-300 ease-in-out;
-  }
-  
+  @apply w-[250px] h-[300px] mx-2 my-6 bg-basic rounded-lg shadow-lg text-center text-white transform cursor-pointer relative transition-transform duration-300 ease-in-out;
+}
+
+
+
+
+.cardClass {}
 
 .service-page-card-icon {
   @apply mx-auto w-24 h-24 object-contain transition-all duration-300;
@@ -36,8 +37,9 @@
 }
 
 .service-page-description-box {
-  @apply mb-10 mt-12 p-2 rounded-[10vh] border border-basic shadow-lg text-center  text-basic ;
+  @apply mb-10 mt-12 p-2 rounded-[10vh] border border-basic shadow-lg text-center text-basic;
 }
+
 .service-page-description {
   @apply text-sm md:text-base mx-8 my-4;
 }
@@ -46,18 +48,16 @@
   @apply text-white text-sm px-4 pt-4 opacity-0 overflow-hidden transition-all duration-500;
 }
 
-/* Hover efekt tylko gdy najedziesz na kartę */
 .service-page-card-active {
-  @apply  scale-125 shadow-[4px_4px_0px_#0f3838] transition-transform duration-300;
+  @apply scale-125 shadow-[4px_4px_0px_#0f3838] transition-transform duration-300;
 }
 
 .service-page-card-deactive {
-  @apply  scale-[0.8];
+  @apply scale-[0.8];
 }
 
-
 .service-page-subtitle-box {
-  @apply mb-10 mt-12 p-2 bg-basic rounded-[10vh] shadow-lg text-center text-white  mx-20;
+  @apply mb-10 mt-12 p-2 bg-basic rounded-[10vh] shadow-lg text-center text-white mx-20;
 }
 
 .service-page-subtitle {
@@ -69,23 +69,11 @@
   @apply opacity-100 max-h-[50vh];
 }
 
+/* Efekty przesunięcia */
 
-/* PRZESUNIECIA */
-.translate-left {
-  @apply -translate-x-[5vh];
-}
 
-.translate-right {
-  @apply translate-x-[5vh];
-}
 
-.row-move-up {
-@apply -translate-y-[5vh] transition-transform duration-300;
-}
 
-.row-move-down {
-@apply translate-y-[10vh] transition-transform duration-300;
-}
 
 .footer {
   @apply mt-10;
