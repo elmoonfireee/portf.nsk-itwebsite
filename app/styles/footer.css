@@ -1,41 +1,38 @@
-  .content {
-    @apply grid grid-cols-1 md:grid-cols-2 gap-8;
-  }
-  
-  /* Lewa strona */
-  .left {
-    @apply flex-1 text-left ml-20;
-  }
-  
-  .copy {
-    @apply mt-8 text-sm;
-  }
-  
-  /* Prawa strona */
-  .right {
-    @apply mr-20 flex flex-col items-end text-right;
-  }
-  
-  .kontaktTitle {
-    @apply font-bold text-[1.2rem] text-center mb-4 mr-8;
-  }
-  
-  /* Rzędy z kontaktem */
-  .contactRow {
-    @apply flex items-center gap-2 justify-center mb-3;
-  }
-  
-  .icon {
-    @apply w-5 h-5;
-    filter: invert(90%) sepia(13%) saturate(745%) hue-rotate(198deg) brightness(93%) contrast(89%);
-  }
-  
-  /* Social media */
-  .socials {
-    @apply flex gap-4;
-  }
-  
-  .socials img {
-    @apply w-6 h-6 cursor-pointer;
-  }
-  
+.content {
+  @apply flex flex-col md:flex-row justify-between gap-8;
+}
+
+/* LEWA STRONA – firma */
+.left {
+  @apply order-2 md:order-1 text-center md:text-left md:ml-20;
+}
+
+/* PRAWA STRONA – kontakt */
+.right {
+  @apply order-1 md:order-2 flex flex-col text-center md:text-right md:items-end md:mr-20;
+}
+
+.kontaktTitle {
+  @apply font-bold text-[1.2rem] mb-4;
+}
+
+.contactRow {
+  @apply flex items-center gap-2 justify-center md:justify-end mb-3;
+}
+
+.icon {
+  @apply w-5 h-5;
+  filter: invert(90%) sepia(13%) saturate(745%) hue-rotate(198deg) brightness(93%) contrast(89%);
+}
+
+.socials {
+  @apply flex gap-4 justify-center md:justify-end mt-2;
+}
+
+.socials img {
+  @apply w-6 h-6 cursor-pointer;
+}
+
+.copy {
+  @apply mt-8 text-sm;
+}
