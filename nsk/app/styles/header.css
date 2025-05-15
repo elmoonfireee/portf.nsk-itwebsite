@@ -6,15 +6,9 @@
            font-semibold;
   }
   
-.navbar a,
-.navbar button {
-  @apply text-white text-base md:text-lg transition-transform duration-200 ease-in-out;
-}
-
-.navbar a:hover,
-.navbar button:hover {
-  @apply scale-110;
-}
+  .navbar a {
+    @apply text-white text-base md:text-lg hover:underline transition;
+  }
 
   .logo {
     @apply flex items-center justify-center;

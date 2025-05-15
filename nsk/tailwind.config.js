@@ -28,7 +28,7 @@ module.exports = {
     extend: {
       
       colors: {
-        basic: '#1e706e',
+        basic: '#1D6E6E',
       },
       animation: {
         fade: 'fadeIn 3s ease-in-out',

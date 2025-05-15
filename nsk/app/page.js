@@ -13,11 +13,6 @@ function HomeContent() {
   const pathname = usePathname();
 
   useEffect(() => {
-  window.scrollTo(0, 0);
-}, []);
-
-
-  useEffect(() => {
     const scrollTo = searchParams.get('scrollTo');
     if (scrollTo) {
       let attempts = 0;

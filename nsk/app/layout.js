@@ -6,8 +6,8 @@ import './styles/layout.css'
 
 
 export const metadata = {
-  title: 'Najszybszy Serwis Komputerowy',
-  description: 'Serwis komputerowy',
+  title: 'IT Website',
+  description: 'Skalowalna strona IT',
 }
 
 export default function RootLayout({ children }) {

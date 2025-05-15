@@ -130,16 +130,7 @@ export default function Contact() {
         <p><strong>Adres:</strong> {contactData.address}</p>
         <p><strong>Telefon:</strong> {contactData.phone}</p>
         <p><strong>Email:</strong> {contactData.email}</p>
-        <p>
-          <strong>Godziny pracy:</strong><br />
-          {contactData.workingHours.split('\n').map((line, idx) => (
-            <span key={idx}>
-              {line}
-              <br />
-            </span>
-          ))}
-        </p>
-
+        <p><strong>Godziny pracy:</strong> {contactData.workingHours}</p>
       </div>
       
 
