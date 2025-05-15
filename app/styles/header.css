@@ -1,0 +1,29 @@
+.navbar {
+    @apply grid 
+           grid-flow-row md:grid-flow-col
+           justify-center items-center 
+           gap-4 md:gap-8
+           font-semibold;
+  }
+  
+.navbar a,
+.navbar button {
+  @apply text-white text-base md:text-lg transition-transform duration-200 ease-in-out;
+}
+
+.navbar a:hover,
+.navbar button:hover {
+  @apply scale-110;
+}
+
+  .logo {
+    @apply flex items-center justify-center;
+  }
+  
+  .logoImage {
+    @apply h-24 w-auto object-contain;
+  }
+
+  .social-media {
+    @apply flex items-center justify-center gap-4;
+  }

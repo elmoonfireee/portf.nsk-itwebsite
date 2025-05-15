@@ -1,0 +1,97 @@
+.contact-section {
+    @apply min-h-screen mb-20 md:min-h-screen 
+    grid grid-cols-1 md:grid-cols-2 gap-8 md:px-10  items-center;
+  }
+  
+  .contact-info {
+    @apply md:px-10 md:mt-10 md:mb-60 md:p-40 text-basic text-lg leading-relaxed opacity-0;
+  }
+  
+  .contact-info h2 {
+    @apply text-3xl font-bold mb-4;
+  }
+  
+
+  /* FORMS */
+  .contact-form {
+    @apply grid grid-cols-1 gap-4 bg-white p-4
+    border-8 border-basic rounded-[40px] text-basic shadow-lg opacity-0;
+  }
+  /* TOP FORM */
+
+  .form-top {
+    @apply grid grid-cols-1 md:grid-cols-[1fr_0.2fr] items-center font-bold text-basic;
+  }
+  
+  .form-title {
+    @apply  order-2 ml-4 md:order-1 mb-4 font-semibold;
+  }
+  
+  .form-logoImage {
+    @apply  hidden md:block order-1 h-16 w-16 md:order-2 md:h-24 md:w-auto object-contain justify-self-end;
+  }
+  
+
+  .form-title h2{
+    @apply text-3xl mb-4 font-semibold;
+  }
+
+  /* INPUT FORM */
+  .contact-form-input {
+    @apply p-1 bg-white text-basic border-4 border-basic rounded-lg ;
+  }
+  .contact-form-textarea {
+    @apply pt-2 px-3 pb-20 bg-white text-basic border-4 border-basic rounded-lg align-top;
+  }
+  .contact-form input::file-selector-button {
+    @apply font-semibold bg-basic text-white rounded-lg border-4 border-basic hover:scale-95 transform transition duration-300;
+  }
+  
+  .contact-form-textarea::placeholder,
+  .contact-form-input::placeholder {
+    @apply text-basic;
+  }
+
+  .contact-form-button {
+    @apply p-1 shadow-[4px_4px_0px_#0f3838] font-semibold items-center bg-basic text-white rounded-lg border-4 border-basic  hover:scale-95 transform transition duration-300;
+  }
+
+  /* FORM ALERTS */
+  .form-alert {
+    @apply  mb-2 mx-10 rounded-lg text-center transition-all duration-300
+    border-4 border-basic rounded-lg shadow-lg
+    animate-flash;
+  }
+
+  .form-alert.success {
+    @apply bg-green-200 text-basic border-2 border-basic font-semibold
+    animate-flash;
+  }
+  
+  .form-alert.error {
+    @apply bg-red-400 text-basic border-2 border-basic font-semibold
+    animate-flash;
+  }
+  
+  .form-alert.info {
+    @apply text-basic border-2 border-basic
+    animate-flash;
+  }
+
+/* ANIMATIONS */
+@keyframes flash {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+  }
+  
+  .animate-flash {
+    animation: flash 1.5s ease-in-out 2;
+  }
+  
+
+
+
