@@ -1,5 +1,5 @@
 .about-section {
-  @apply h-screen grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-10;
+  @apply h-screen grid grid-cols-1 mb-40 md:grid-cols-2 gap-8 items-center px-10;
 }
 
 .about-image {

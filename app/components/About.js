@@ -54,7 +54,7 @@ export default function About() {
         ref={imageRef}
         className={`about-image ${isVisible.image ? 'animate-slide-in-left' : 'opacity-0'}`}
       >
-        <Image src={aboutData.image} alt={aboutData.title} width={400} height={400} />
+        <Image loading="lazy" src={aboutData.image} alt={aboutData.title} width={400} height={400} />
       </div>
       <div
         ref={textRef}

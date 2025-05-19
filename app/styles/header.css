@@ -27,3 +27,7 @@
   .social-media {
     @apply flex items-center justify-center gap-4;
   }
+
+ .social-media-image{
+  @apply w-[50px] h-[50px];
+}

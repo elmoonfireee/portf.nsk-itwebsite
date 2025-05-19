@@ -23,7 +23,7 @@ export default function Header() {
        <div className="logo">
       <Link href="/" passHref>
         <Image
-          src="/logo-NSK.png"
+          src="/logo-NSK.webp"
           alt="Logo"
           width={500}
           height={500}
@@ -40,10 +40,10 @@ export default function Header() {
       </nav>
       <div className="social-media">
         <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-          <Image src={"/ig_sm.png"} alt="Social" width={35} height={24} />
+          <Image className='social-media-image' loading="lazy" src={"/ig_sm.webp"} alt="Social" width={50} height={50} />
         </a>
         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-          <Image src={"/ln_sm.png"} alt="Social" width={35} height={24} />
+          <Image className='social-media-image' loading="lazy" src={"/ln_sm.webp"} alt="Social" width={50} height={50} />
         </a>
       </div>
     </header>

@@ -14,6 +14,7 @@ export default function Slogan() {
   const [rightImage, setRightImage] = useState('');
 
   useEffect(() => {
+    
     fetch('/data/slogan.json')
       .then((response) => response.json())
       .then((data) => {
@@ -24,8 +25,13 @@ export default function Slogan() {
   }, []);
 
   if (titles.length === 0) {
-    return null;
-  }
+  return (
+    <section className="slogan-container">
+      <div style={{ height: '80vh' }}></div> {/* lub className="min-h-[80vh]" */}
+    </section>
+  );
+}
+
 
   return (
 <section className="slogan-container">
@@ -33,7 +39,7 @@ export default function Slogan() {
 <div className="slogan">
 {/* Lewy obrazek */}
 <div className="slogan-icon-left">
-  <Image src={leftImage} alt="Left" width={300} height={300} className="slogan-icon" />
+  <Image src={leftImage} alt="Left" width={300} height={300} className="slogan-icon" priority/>
 </div>
 
 {/* Środkowy zmieniający się tekst */}
@@ -63,12 +69,20 @@ export default function Slogan() {
 
 {/* Prawy obrazek */}
 <div className="slogan-icon-right ">
-  <Image src={rightImage} alt="Right" width={300} height={300} className="slogan-icon" />
+  <Image src={rightImage} alt="Right" width={300} height={300} className="slogan-icon" priority/>
 </div>
 </div>
-<div className="slogan-image">
-  <Image src={'/icons/slogan_img.png'} alt="Left" fill className="object-cover object-center"/>
-  </div>
+<div className="slogan-image-wrapper">
+  <Image  
+    src="/icons/slogan_img.webp"
+    alt="Mid"
+    width={1536}
+    height={1024}
+    className="slogan-image"
+    priority
+  />
+</div>
+
 </section>
 
   );
