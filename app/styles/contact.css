@@ -1,6 +1,6 @@
 .contact-section {
     @apply min-h-screen mb-20 md:min-h-screen 
-    grid grid-cols-1 md:grid-cols-2 gap-8 md:px-10  items-center;
+    grid grid-cols-1 mt-auto md:grid-cols-2 gap-8 md:px-10  items-center;
   }
   
   .contact-info {

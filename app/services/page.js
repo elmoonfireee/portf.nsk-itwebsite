@@ -13,6 +13,8 @@ export default function ServicesPage() {
   const [expandedIndex, setExpandedIndex] = useState(null);
   const [expandedSections, setExpandedSections] = useState({}); // 🟢 TO BYŁO BRAKUJĄCE
 
+
+  
   useEffect(() => {
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth < 768);
@@ -77,6 +79,7 @@ export default function ServicesPage() {
                           alt={item.title}
                           width={80}
                           height={80}
+                          loading="lazy"
                           className="service-page-mobile-card-icon"
                         />
                         <h3 className="service-page-mobile-card-title">{item.title}</h3>
@@ -234,6 +237,7 @@ export default function ServicesPage() {
                               alt={feature.title}
                               width={300}
                               height={300}
+                              loading="lazy"
                               className="service-page-card-icon"
                             />
                             <h3 className="service-page-card-title">{feature.title}</h3>

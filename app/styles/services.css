@@ -6,16 +6,17 @@
 }
 
 .service-card-left {
-  @apply bg-basic md:p-10 md:p-8 rounded-lg shadow-lg text-center opacity-0 transition-opacity duration-300;
+  @apply min-h-[100px] md:min-h-[300px] w-auto bg-basic md:p-10 md:p-8 rounded-lg shadow-lg text-center opacity-0 transition-opacity duration-300;
 }
 
+
 .service-card-right {
-  @apply bg-basic md:p-10 md:p-8 rounded-lg shadow-lg text-center opacity-0 transition-opacity duration-300;
+  @apply min-h-[100px] md:min-h-[300px] w-auto bg-basic md:p-10 md:p-8 rounded-lg shadow-lg text-center opacity-0 transition-opacity duration-300;
 }
 
 
 .service-icon {
-  @apply mx-auto h-32 w-32 object-contain;
+  @apply mx-auto h-[128px] w-[128px] object-contain;
 }
 
 .service-title {

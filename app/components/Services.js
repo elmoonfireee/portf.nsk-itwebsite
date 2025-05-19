@@ -102,15 +102,15 @@ function ServiceCard({ feature, direction }) {
     isVisible ? `animate-slide-in-${direction}` : ''
   }`}
 >
-
       <Image
         src={feature.icon}
         alt={feature.title}
         width={300}
         height={300}
+        loading="lazy"
         className="service-icon"
       />
-      <h3 className="service-title">{feature.title}</h3>
+      <h1 className="service-title">{feature.title}</h1>
       <p className="service-text">{feature.text}</p>
 
     </div>

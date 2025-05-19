@@ -1,10 +1,18 @@
 .slogan-container {
-  @apply mt-2 md:mt-10 grid grid-rows-[20%_80%] h-[50vh] md:h-[80vh];
+  @apply mt-2 md:mt-10 md:mb-10 grid grid-rows-[20%_80%] h-[50vh] md:h-[80vh];
+}
+
+
+.slogan-image-wrapper {
+  @apply flex items-center justify-center w-full h-full ;
 }
 
 .slogan-image {
-  @apply animate-slide-in-top relative mx-8 mb-8 mt-20 xl:mt-[10vh] xl:mx-[30vh] xl:h-[50vh]; 
+  @apply w-full h-full max-h-full object-contain animate-slide-in-top;
 }
+
+
+
 
 
 .slogan {

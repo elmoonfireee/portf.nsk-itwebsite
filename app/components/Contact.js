@@ -155,12 +155,13 @@ export default function Contact() {
                 <p>Skontaktujemy się z Tobą jak najszybciej.</p>
             </div>
             <Image
-                  src={"/logo-NSK.png"}
+                  src={"/logo-NSK.webp"}
                   alt="Logo"
                   width={500}
                   height={500}
                   className={"form-logoImage"}
-                  priority
+                  loading="lazy"
+                  //priority
                 />
             
         </div>
@@ -201,14 +202,19 @@ export default function Contact() {
           required
           className='contact-form-textarea'
         ></textarea>
+        <label htmlFor="file-input">
+        </label>
         <input
+          id="file-input"
           type="file"
           name="file"
           multiple
           ref={fileInputRef}
           onChange={handleChange}
-          className='file-input'
+          className="file-input"
         />
+
+
         <button  className='contact-form-button' type="submit">Wyślij</button>
         {status && (
   <p className={`form-alert ${statusType}`}>

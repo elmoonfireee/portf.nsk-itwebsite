@@ -24,21 +24,23 @@ export default function Footer() {
       <p className="kontaktTitle">{footerData.contact.title}</p>
 
       <div className="contactRow">
-        <img src="/icons/emails.png" className="icon" />
+        
+        <Image loading="lazy" className='icon' src="/icons/emails.webp" alt="Mail" width={50} height={50} />
         <span>{footerData.contact.email}</span>
       </div>
 
       <div className="contactRow">
-        <img src="/icons/calling.png" className="icon" />
+        
+        <Image loading="lazy" className='icon' src="/icons/calling.webp" alt="Call" width={50} height={50}/>
         <span>{footerData.contact.phone}</span>
       </div>
 
       <div className="socials">
         <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-          <Image src="/ig_sm.png" alt="Social" width={35} height={24} />
+          <Image loading="lazy" src="/ig_sm.webp" alt="Social" width={35} height={24} />
         </a>
         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-          <Image src="/ln_sm.png" alt="Social" width={35} height={24} />
+          <Image loading="lazy" src="/ln_sm.webp" alt="Social" width={35} height={24} />
         </a>
       </div>
     </div>
