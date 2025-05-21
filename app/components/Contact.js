@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import '../styles/contact.css';
 import Image from 'next/image';
 
+// React functional component that displays contact information and a form
 export default function Contact() {
   const [contactData, setContactData] = useState(null);
   const leftRef = useRef(null);
@@ -22,6 +23,8 @@ export default function Contact() {
   const [status, setStatus] = useState('');
   const [statusType, setStatusType] = useState('');
 
+  // Fetch contact data from JSON when component mounts
+  // Set up IntersectionObservers to animate contact info and form on scroll
   useEffect(() => {
     fetch('/data/contact.json')
       .then((res) => res.json())
@@ -54,13 +57,14 @@ export default function Contact() {
     };
   }, [contactData]);
 
+  // Handle input change for form fields and file upload
   const handleChange = (e) => {
     const { name, value, files } = e.target;
-  
+
     if (e.target.type === 'file') {
       setFormData(prev => ({
         ...prev,
-        files: Array.from(files), // ← tutaj zawsze aktualizujemy `formData.files`
+        files: Array.from(files),
       }));
     } else {
       setFormData(prev => ({
@@ -69,9 +73,9 @@ export default function Contact() {
       }));
     }
   };
-  
 
-   const handleSubmit = async (e) => {
+  // Handle form submission: send form data and files to backend
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('Wysyłanie...');
     setStatusType('info');
@@ -84,21 +88,20 @@ export default function Contact() {
       data.append('message', formData.message);
       formData.files.forEach((file) => {
         data.append('file', file);
-        console.log('📤 Wysyłam plik:', file.name);
       });
-      console.log('📤 Wysyłam plik:', formData.files);
+
       const res = await fetch('/api/contact', {
         method: 'POST',
         body: data,
       });
-      
+
       if (res.ok) {
         setStatus('Formularz został wysłany!');
         setStatusType('success');
         setFormData({ name: '', phone: '', email: '', message: '', files: [] });
-      
+
         if (fileInputRef.current) {
-          fileInputRef.current.value = ''; // reset inputa plików
+          fileInputRef.current.value = ''; // reset file input
         }
       } else {
         let errorMessage = 'Błąd przy wysyłaniu formularza. Napisz do nas na e-mail lub zadzwoń.';
@@ -106,11 +109,11 @@ export default function Contact() {
           const json = await res.json();
           errorMessage = json.error || 'Plik jest zbyt duży. Maksymalna dozwolona wielkość to 20 MB.';
         }
-      
+
         setStatus(errorMessage);
         setStatusType('error');
       }
-      
+
     } catch (err) {
       console.error('Błąd sieci:', err);
       setStatus('Błąd połączenia z serwerem. Napisz do nas na e-mail lub zadzwoń.');
@@ -133,15 +136,10 @@ export default function Contact() {
         <p>
           <strong>Godziny pracy:</strong><br />
           {contactData.workingHours.split('\n').map((line, idx) => (
-            <span key={idx}>
-              {line}
-              <br />
-            </span>
+            <span key={idx}>{line}<br /></span>
           ))}
         </p>
-
       </div>
-      
 
       <form
         ref={rightRef}
@@ -149,24 +147,20 @@ export default function Contact() {
         className={`contact-form ${isVisible.right ? 'animate-slide-in-right' : 'opacity-0'}`}
       >
         <div className='form-top'>
- 
-            <div className='form-title'>
-                <h2>Wypełnij formularz</h2>
-                <p>Skontaktujemy się z Tobą jak najszybciej.</p>
-            </div>
-            <Image
-                  src={"/logo-NSK.webp"}
-                  alt="Logo"
-                  width={500}
-                  height={500}
-                  className={"form-logoImage"}
-                  loading="lazy"
-                  //priority
-                />
-            
+          <div className='form-title'>
+            <h2>Wypełnij formularz</h2>
+            <p>Skontaktujemy się z Tobą jak najszybciej.</p>
+          </div>
+          <Image
+            src={"/logo-NSK.webp"}
+            alt="Logo"
+            width={500}
+            height={500}
+            className={"form-logoImage"}
+            loading="lazy"
+          />
         </div>
-    
-        
+
         <input
           type="text"
           name="name"
@@ -211,20 +205,11 @@ export default function Contact() {
           multiple
           ref={fileInputRef}
           onChange={handleChange}
-          className="file-input"
+          className="file-input "
         />
-
-
-        <button  className='contact-form-button' type="submit">Wyślij</button>
-        {status && (
-  <p className={`form-alert ${statusType}`}>
-    {status}
-  </p>
-)}
-
+        <button className='contact-form-button' type="submit">Wyślij</button>
+        {status && <p className={`form-alert ${statusType}`}>{status}</p>}
       </form>
-
     </section>
-    
   );
 }

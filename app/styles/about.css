@@ -1,16 +1,19 @@
+/* Main section layout: full screen height, responsive grid with padding and spacing */
 .about-section {
-  @apply h-screen grid grid-cols-1 mb-40 md:grid-cols-2 gap-8 items-center px-10;
+  @apply h-screen grid grid-cols-1 mb-40 md:grid-cols-2 gap-8 items-center px-4;
 }
 
+/* Image block styling: responsive margins, rounded border, and default hidden (opacity-0) for animation */
 .about-image {
-  @apply  h-auto xl:ml-40 xl:mr-40 xl:mt-40 opacity-0 border-4 border-basic rounded-lg;
+  @apply h-auto xl:ml-40 xl:mr-40 xl:mt-40 opacity-0 border-4 border-basic rounded-lg;
 }
 
-
+/* Text block styling: vertical spacing, text color and line height, hidden initially for animation */
 .about-text {
   @apply mb-20 md:mt-40 opacity-0 text-basic text-lg leading-relaxed;
 }
 
+/* Title styling inside text block: large bold font with bottom margin */
 .about-text h2 {
   @apply text-3xl font-bold mb-4;
 }

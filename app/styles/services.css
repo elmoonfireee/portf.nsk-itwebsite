@@ -1,43 +1,46 @@
+/* Section container with spacing */
 .service-container {
   @apply min-h-screen grid grid-rows-1 gap-6 mb-20 md:mb-2;
 }
+
+/* Grid layout for service cards */
 .services-grid {
-  @apply  md:px-10 grid grid-cols-2 md:grid-cols-2 gap-6;
+  @apply md:px-10 grid grid-cols-2 md:grid-cols-2 gap-6;
 }
 
+/* Service card aligned left */
 .service-card-left {
   @apply min-h-[100px] md:min-h-[300px] w-auto bg-basic md:p-10 md:p-8 rounded-lg shadow-lg text-center opacity-0 transition-opacity duration-300;
 }
 
-
+/* Service card aligned right */
 .service-card-right {
   @apply min-h-[100px] md:min-h-[300px] w-auto bg-basic md:p-10 md:p-8 rounded-lg shadow-lg text-center opacity-0 transition-opacity duration-300;
 }
 
-
+/* Icon style inside service card */
 .service-icon {
   @apply mx-auto h-[128px] w-[128px] object-contain;
 }
 
+/* Title style inside service card */
 .service-title {
   @apply text-white font-bold pb-4 mx-4 md:text-xl md:mb-7;
 }
 
+/* Hidden on small screens, visible on medium and up */
 .service-text {
   @apply text-white text-sm hidden md:block;
 }
 
+/* 'See more' button */
 .service-more {
   @apply text-white block shadow-[4px_4px_0px_#0f3838] bg-basic border-4 border-basic 
   font-bold w-fit mx-auto px-10 md:px-20 py-5 rounded-lg
   hover:scale-95 transform transition duration-300;
-
 }
+
+/* Button wrapper for animation */
 .service-more-button {
-  
-  @apply  opacity-0 transition-all duration-300 transform hover:scale-95;
+  @apply opacity-0 transition-all duration-300 transform hover:scale-95;
 }
-
-
-
-

@@ -1,38 +1,93 @@
+# 🖥️ Najszybszy Serwis Komputerowy
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+A professional, responsive web application for a computer repair service. Built with **Next.js**, **Tailwind CSS**, and modern frontend tools. Includes a functional contact form with file attachments, dynamic sections, and smooth animations.
 
-## Getting Started
+## 🔗 Live Demo
 
-First, run the development server:
+👉 [Visit the live site](https://nsk-serwis.pl) 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## ⚙️ Tech Stack
+
+- [Next.js](https://nextjs.org/) — App framework
+- [Tailwind CSS](https://tailwindcss.com/) — Utility-first styling
+- [Formidable](https://www.npmjs.com/package/formidable) — File upload handler
+- [Nodemailer](https://nodemailer.com/) — Email sending from API
+- [Swiper](https://swiperjs.com/) — Hero slider
+
+---
+
+## 📂 Project Structure
+
+```
+/app
+  /components     → Reusable UI components (Header, Footer, etc.)
+  /services       → Full-page dynamic services section
+  /styles         → Tailwind-based custom CSS
+/pages/api        → Contact form backend (with file support)
+public            → Images, icons, JSON data
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## ✉️ Contact Form
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Built using `formidable` and `nodemailer`
+- Supports multiple file attachments (max total: 20MB)
+- Sends formatted emails to configured address via Gmail SMTP
 
-## Learn More
+> ℹ️ Requires the following environment variables:
+```
+SMTP_USER=your_email@gmail.com
+SMTP_PASS=your_gmail_app_password
+CONTACT_EMAIL=recipient_email@example.com
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 How to Run Locally
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone the repo:
+```bash
+git clone https://github.com/your-username/nsk-website.git
+cd nsk-website
+```
 
-## Deploy on Vercel
+2. Install dependencies:
+```bash
+npm install
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Create `.env.local` with required SMTP config
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Run the app:
+```bash
+npm run build
+node app.js
+```
+
+> Or use `next dev` during development.
+
+---
+
+## 📦 Build & Deploy
+
+- Fully static-compatible (except `/api/contact`)
+- Works well on **Nazwa** or **custom VPS**
+
+---
+
+## 👤 Author
+
+Created by **elmoonfireee**  
+Feel free to reach out via [LinkedIn](https://www.linkedin.com/in/damian-kaminski-9ab52a286/) or email.
+
+---
+
+## 📝 License
+
+This project is proprietary. All rights reserved.  
+Code and design are © by elmoonfireee.  
+You may not reuse or redistribute any part of it without permission.
 

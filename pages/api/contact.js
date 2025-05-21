@@ -2,20 +2,26 @@ import { IncomingForm } from 'formidable';
 import nodemailer from 'nodemailer';
 import fs from 'fs';
 
+// Disable default body parser to allow file uploads via formidable
 export const config = {
   api: {
     bodyParser: false,
   },
 };
 
+// API route handler for processing contact form submissions
 export default async function handler(req, res) {
+  // Reject any method other than POST
   if (req.method !== 'POST') {
     return res.status(405).send('Method Not Allowed');
   }
 
+  // Create new formidable form instance with max file size limit
   const form = new IncomingForm({ multiples: true, maxTotalFileSize: 20 * 1024 * 1024 });
 
+  // Parse the incoming request (fields and files)
   form.parse(req, async (err, fields, files) => {
+    // Handle errors from parsing form data
     if (err) {
       console.error('❌ Błąd formularza:', err);
 
@@ -29,17 +35,20 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: 'Błąd formularza' });
     }
 
+    // Extract text fields from form
     const { name, email, phone, message } = fields;
     const fileList = files?.file
       ? (Array.isArray(files.file) ? files.file : [files.file])
       : [];
 
+    // Prepare attachments for nodemailer
     const attachments = fileList.filter(Boolean).map(file => ({
       filename: file.originalFilename,
       path: file.filepath,
     }));
 
     try {
+      // Configure SMTP transport using Gmail and environment variables
       const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -48,6 +57,7 @@ export default async function handler(req, res) {
         },
       });
 
+      // Send the email with form data and attachments
       await transporter.sendMail({
         from: `"${name}" <${email}>`,
         to: process.env.CONTACT_EMAIL,

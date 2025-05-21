@@ -8,17 +8,17 @@ import Slogan from "./components/Slogan";
 import About from "./components/About";
 import Contact from "./components/Contact";
 
+// HomeContent component loads the main sections and scrolls to anchor if specified
 function HomeContent() {
   const searchParams = useSearchParams();
   const pathname = usePathname();
 
-  
-
+  // Scroll to top on initial load
   useEffect(() => {
-  window.scrollTo(0, 0);
-}, []);
+    window.scrollTo(0, 0);
+  }, []);
 
-
+  // Scroll to specific section if 'scrollTo' param is present
   useEffect(() => {
     const scrollTo = searchParams.get('scrollTo');
     if (scrollTo) {
@@ -49,6 +49,7 @@ function HomeContent() {
   );
 }
 
+// Root Home component with Suspense for async rendering
 export default function Home() {
   return (
     <Suspense fallback={<div>Ładowanie strony...</div>}>

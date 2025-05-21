@@ -1,6 +1,0 @@
-FEATURES
-1. Zmiana ukadu siatki w /services
-
-# POPRAWKI
-
-2. Informacja o zbyt dużym pliku

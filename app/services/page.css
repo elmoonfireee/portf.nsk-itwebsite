@@ -1,43 +1,54 @@
+/* Main container for desktop layout */
 .service-page {
   @apply min-h-screen px-10 py-20;
 }
 
+/* Section title styling */
 .service-page-title {
   @apply text-3xl md:text-5xl font-bold text-center text-basic mb-10;
 }
 
+/* Wrapper for each section */
 .service-page-grid-container {
   @apply mb-12;
 }
 
+/* Vertical layout of card rows */
 .service-page-grid-rows {
   @apply flex flex-col justify-center items-center gap-4;
 }
 
+/* Row of service cards */
 .service-page-grid-columns {
   @apply flex flex-row justify-center items-center min-h-[20vh];
 }
 
+/* Service card (default state) */
 .service-page-card {
   @apply w-[250px] h-[300px] mx-2 my-6 bg-basic rounded-lg shadow-lg text-center text-white transform cursor-pointer relative transition-transform duration-300 ease-in-out;
 }
 
+/* Card image style */
 .service-page-card-icon {
   @apply mx-auto w-24 h-24 object-contain transition-all duration-300;
 }
 
+/* Card title */
 .service-page-card-title {
   @apply text-base md:text-lg font-semibold mx-4;
 }
 
+/* Card text, hidden by default */
 .service-page-card-text {
   @apply text-white text-sm px-4 pt-4 opacity-0 overflow-hidden transition-all duration-500;
 }
 
+/* Enlarged card when hovered */
 .service-page-card-active {
   @apply scale-125 shadow-[4px_4px_0px_#0f3838] transition-transform duration-300;
 }
 
+/* Shrunk cards around active */
 .service-page-card-deactive {
   @apply scale-[0.8];
 }
@@ -47,18 +58,22 @@
   @apply opacity-100 max-h-[50vh];
 }
 
+/* Subtitle container for sections */
 .service-page-subtitle-box {
   @apply mb-10 mt-12 p-2 bg-basic rounded-[10vh] shadow-lg text-center text-white mx-20;
 }
 
+/* Section subtitle text */
 .service-page-subtitle {
   @apply text-2xl md:text-3xl font-semibold text-center text-white;
 }
 
+/* Top description section */
 .service-page-description-box {
   @apply font-bold mb-10 mt-12 p-2 rounded-[10vh] border border-basic shadow-lg text-center text-basic;
 }
 
+/* Description text style */
 .service-page-description {
   @apply text-sm md:text-base mx-4 my-2 md:mx-8 my-4;
 }
@@ -67,43 +82,52 @@
   @apply mt-10;
 }
 
-/* === MOBILE === */
+/* === MOBILE VIEW STYLES === */
 .service-page-mobile {
   @apply min-h-screen px-4 py-8;
 }
 
+/* Wrapper for mobile sections */
 .service-page-mobile-section {
   @apply mb-10;
 }
 
+/* Expandable subtitle box */
 .service-page-mobile-subtitle-box {
   @apply mt-12 p-2 bg-basic rounded-[10vh] shadow-lg text-center transition-all duration-500 ease-in-out mx-auto max-w-[70%];
 }
 
+/* Subtitle box expanded */
 .service-page-mobile-subtitle-box.expanded {
   @apply max-w-full;
 }
 
+/* Subtitle text */
 .service-page-mobile-subtitle {
   @apply text-2xl font-bold text-center text-white;
 }
 
+/* Service card in mobile view */
 .service-page-mobile-card {
   @apply my-10 w-full bg-basic text-white rounded-lg shadow-lg p-4 transition-all duration-300 overflow-hidden cursor-pointer;
 }
 
+/* Mobile card icon */
 .service-page-mobile-card-icon {
   @apply mx-auto w-20 h-20 object-contain;
 }
 
+/* Mobile card title */
 .service-page-mobile-card-title {
   @apply text-center text-lg font-bold mt-4;
 }
 
+/* Mobile card description, collapsible */
 .service-page-mobile-card-text {
   @apply mt-2 my-2 text-center text-sm transition-all duration-300 ease-in-out max-h-0 opacity-0;
 }
 
+/* Expanded mobile card */
 .service-page-mobile-card-expanded {
   @apply -translate-y-2 shadow-[4px_4px_0px_#0f3838] transition-transform duration-300;
 }
@@ -112,6 +136,7 @@
   @apply max-h-[400px] opacity-100;
 }
 
+/* Button to collapse section */
 .service-page-mobile-collapse-button {
   @apply w-[48px] h-[24px] flex justify-center items-center
          bg-basic text-white text-xl rounded-full
@@ -119,10 +144,12 @@
 }
 
 /* === ANIMACJE === */
+/* Wrapper for animated card list */
 .service-page-mobile-cards-wrapper {
   @apply overflow-hidden transition-all duration-1000 ease-in-out max-h-0 opacity-0;
 }
 
+/* Expanded card list */
 .service-page-mobile-cards-wrapper.expanded {
   @apply max-h-[3000px] opacity-100;
 }

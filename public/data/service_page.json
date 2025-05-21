@@ -4,129 +4,77 @@
     "items": [
       {
         "title": "Naprawa komputerów i laptopów",
-        "text": "Szybka diagnostyka i naprawa usterek sprzętowych oraz systemowych. Przywracamy Twoje urządzenie do pełnej sprawności.",
+        "text": "Szybka diagnoza i skuteczna naprawa usterek sprzętowych.",
         "icon": "/icons/pc_service.webp"
       },
       {
+        "title": "Wycena wymarzonego sprzętu",
+        "text": "Dobór i wycena komputera dopasowanego do Twoich potrzeb i budżetu.",
+        "icon": "/icons/wycena.webp"
+      },
+      
+      {
         "title": "Modernizacja komputerów i laptopów",
-        "text": "Doradzamy i wykonujemy modernizację sprzętu: rozbudowa pamięci RAM, wymiana dysku na SSD, instalacja nowych komponentów.",
+        "text": "Ulepszanie sprzętu – dokładanie RAM-u, wymiana dysku, karty graficznej i więcej.",
         "icon": "/icons/upgrade.webp"
       },
       {
-        "title": "Serwis i czyszczenie sprzętu",
-        "text": "Profesjonalne czyszczenie wnętrza komputerów i laptopów z kurzu oraz wymiana pasty termoprzewodzącej dla lepszej wydajności.",
-        "icon": "/icons/cleaning.webp"
+        "title": "Wymiana peryferiów",
+        "text": "Szybka wymiana klawiatur, myszek, monitorów i innych akcesoriów..",
+        "icon": "/icons/peryferia.webp"
       },
       {
-        "title": "Serwis i czyszczenie sprzętu",
-        "text": "Profesjonalne czyszczenie wnętrza komputerów i laptopów z kurzu oraz wymiana pasty termoprzewodzącej dla lepszej wydajności.",
-        "icon": "/icons/cleaning.webp"
+        "title": "Zamówienie podzespołów oraz składanie komputerów",
+        "text": "Kompleksowa obsługa: od wyboru części po złożenie gotowego zestawu.",
+        "icon": "/icons/complit.webp"
       },
       {
-        "title": "Serwis i czyszczenie sprzętu",
-        "text": "Profesjonalne czyszczenie wnętrza komputerów i laptopów z kurzu oraz wymiana pasty termoprzewodzącej dla lepszej wydajności.",
+        "title": "Detailing, czyszczenie komputera",
+        "text": "Profesjonalne czyszczenie wnętrza i obudowy komputera – lepsze chłodzenie i wygląd.",
         "icon": "/icons/cleaning.webp"
-      },
-      {
-        "title": "TEST",
-        "text": "Profesjonalne usuwanie wirusów, malware i oprogramowania szpiegującego. Instalacja skutecznych programów antywirusowych i zabezpieczeń.",
-        "icon": "/icons/security.webp"
       }
-      ,
-      {
-        "title": "TEST",
-        "text": "Profesjonalne usuwanie wirusów, malware i oprogramowania szpiegującego. Instalacja skutecznych programów antywirusowych i zabezpieczeń.",
-        "icon": "/icons/security.webp"
-      }
-      ,
-      {
-        "title": "TEST",
-        "text": "Profesjonalne usuwanie wirusów, malware i oprogramowania szpiegującego. Instalacja skutecznych programów antywirusowych i zabezpieczeń.",
-        "icon": "/icons/security.webp"
-      }
-      ,
-      {
-        "title": "TEST",
-        "text": "Profesjonalne usuwanie wirusów, malware i oprogramowania szpiegującego. Instalacja skutecznych programów antywirusowych i zabezpieczeń.",
-        "icon": "/icons/security.webp"
-      }
+    
     ]
   },
   {
     "title": "Software",
     "items": [
       {
-        "title": "Usuwanie wirusów i zabezpieczanie systemu",
-        "text": "Profesjonalne usuwanie wirusów, malware i oprogramowania szpiegującego. Instalacja skutecznych programów antywirusowych i zabezpieczeń.",
+        "title": "Zabezpieczenia i ochrona antywirusowa",
+        "text": "Instalacja skutecznych programów antywirusowych i zapór sieciowych.",
         "icon": "/icons/security.webp"
       },
       {
         "title": "Instalacja i konfiguracja oprogramowania",
-        "text": "Pomagamy w instalacji systemów operacyjnych Windows, Linux oraz dowolnego oprogramowania użytkowego lub specjalistycznego.",
+        "text": "Pełne wdrożenie systemów operacyjnych i programów użytkowych.",
         "icon": "/icons/soft_conf.webp"
       },
       {
         "title": "Odzyskiwanie danych",
-        "text": "Odzyskujemy dane z uszkodzonych dysków twardych, pendrive'ów i kart pamięci. Ratujemy ważne pliki i dokumenty.",
-        "icon": "/icons/data_recovery.webp"
-      }
-    ]
-  },
-
-  {
-    "title": "TEST",
-    "items": [
-      {
-        "title": "TEST",
-        "text": "Profesjonalne usuwanie wirusów, malware i oprogramowania szpiegującego. Instalacja skutecznych programów antywirusowych i zabezpieczeń.",
-        "icon": "/icons/security.webp"
-      },
-      {
-        "title": "Instalacja i konfiguracja oprogramowania",
-        "text": "Pomagamy w instalacji systemów operacyjnych Windows, Linux oraz dowolnego oprogramowania użytkowego lub specjalistycznego.",
-        "icon": "/icons/soft_conf.webp"
-      },
-      {
-        "title": "Odzyskiwanie danych",
-        "text": "Odzyskujemy dane z uszkodzonych dysków twardych, pendrive'ów i kart pamięci. Ratujemy ważne pliki i dokumenty.",
+        "text": "Przywracanie utraconych plików z dysków, pendrive'ów i kart pamięci.",
         "icon": "/icons/data_recovery.webp"
       },
       {
-        "title": "TEST",
-        "text": "Profesjonalne usuwanie wirusów, malware i oprogramowania szpiegującego. Instalacja skutecznych programów antywirusowych i zabezpieczeń.",
-        "icon": "/icons/security.webp"
+        "title": "Zabezpieczanie danych",
+        "text": "Konfiguracja kopii zapasowych i szyfrowania danych.",
+        "icon": "/icons/data_safe.webp"
       },
       {
-        "title": "TEST",
-        "text": "Profesjonalne usuwanie wirusów, malware i oprogramowania szpiegującego. Instalacja skutecznych programów antywirusowych i zabezpieczeń.",
-        "icon": "/icons/security.webp"
+        "title": "Zgrywanie danych",
+        "text": "Kopiowanie danych między nośnikami lub urządzeniami.",
+        "icon": "/icons/data_copy.webp"
       },
       {
-        "title": "TEST",
-        "text": "Profesjonalne usuwanie wirusów, malware i oprogramowania szpiegującego. Instalacja skutecznych programów antywirusowych i zabezpieczeń.",
-        "icon": "/icons/security.webp"
+        "title": "Konfiguracja i optymalizacja komputera",
+        "text": "Ustawienie systemu i sprzętu pod kątem wydajności i komfortu pracy.",
+        "icon": "/icons/configuration.webp"
       },
       {
-        "title": "TEST",
-        "text": "Profesjonalne usuwanie wirusów, malware i oprogramowania szpiegującego. Instalacja skutecznych programów antywirusowych i zabezpieczeń.",
-        "icon": "/icons/security.webp"
-      },
-      {
-        "title": "TEST",
-        "text": "Profesjonalne usuwanie wirusów, malware i oprogramowania szpiegującego. Instalacja skutecznych programów antywirusowych i zabezpieczeń.",
-        "icon": "/icons/security.webp"
-      },
-      {
-        "title": "TEST",
-        "text": "Profesjonalne usuwanie wirusów, malware i oprogramowania szpiegującego. Instalacja skutecznych programów antywirusowych i zabezpieczeń.",
-        "icon": "/icons/security.webp"
-      },
-      {
-        "title": "TEST",
-        "text": "Profesjonalne usuwanie wirusów, malware i oprogramowania szpiegującego. Instalacja skutecznych programów antywirusowych i zabezpieczeń.",
-        "icon": "/icons/security.webp"
+        "title": "Tworzenie stron internetowych",
+        "text": "Nowoczesne strony internetowe dopasowane do Twoich potrzeb i branży.",
+        "icon": "/icons/website_create.webp"
       }
     ]
   }
-  
+
 ]

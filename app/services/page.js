@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import './page.css';
 
+// Full-page component displaying detailed services (responsive: desktop + mobile)
 export default function ServicesPage() {
   const [isMobile, setIsMobile] = useState(false);
   const [features, setFeatures] = useState([]);
@@ -13,8 +14,8 @@ export default function ServicesPage() {
   const [expandedIndex, setExpandedIndex] = useState(null);
   const [expandedSections, setExpandedSections] = useState({}); // 🟢 TO BYŁO BRAKUJĄCE
 
-
-  
+  // Handle responsive behavior (desktop vs mobile)
+  // Fetch service data from JSON file
   useEffect(() => {
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth < 768);
@@ -32,6 +33,7 @@ export default function ServicesPage() {
       .catch((err) => console.error('Błąd ładowania usług:', err));
   }, []);
 
+  // MOBILE VIEW
   if (isMobile) {
     return (
       <section className="service-page-mobile">
@@ -104,7 +106,6 @@ export default function ServicesPage() {
                       ↑
                     </button>
                   </div>
-
                 )}
               </div>
             </div>
@@ -114,11 +115,7 @@ export default function ServicesPage() {
     );
   }
 
-
-
-
-
-  // DESKTOPOWA WERSJA (oryginalna)
+  // DESKTOP VIEW
   const cardsPerRow = 6;
 
   return (

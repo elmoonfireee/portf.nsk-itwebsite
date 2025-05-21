@@ -1,38 +1,45 @@
+/* Footer main layout: flex container with vertical on mobile, horizontal on desktop */
 .content {
   @apply flex flex-col md:flex-row justify-between gap-8;
 }
 
-/* LEWA STRONA – firma */
+/* LEFT SIDE – company info */
 .left {
   @apply order-2 md:order-1 text-center md:text-left md:ml-20;
 }
 
-/* PRAWA STRONA – kontakt */
+/* RIGHT SIDE – contact info */
 .right {
   @apply order-1 md:order-2 flex flex-col text-center md:text-right md:items-end md:mr-20;
 }
 
+/* Contact section title */
 .kontaktTitle {
   @apply font-bold text-[1.2rem] mb-4;
 }
 
+/* Single contact row (icon + text) */
 .contactRow {
   @apply flex items-center gap-2 justify-center md:justify-end mb-3;
 }
 
+/* Icon style for contact items */
 .icon {
   @apply w-5 h-5;
   filter: invert(90%) sepia(13%) saturate(745%) hue-rotate(198deg) brightness(93%) contrast(89%);
 }
 
+/* Social icons wrapper */
 .socials {
   @apply flex gap-4 justify-center md:justify-end mt-2;
 }
 
+/* Social media icon image */
 .socials img {
   @apply w-6 h-6 cursor-pointer;
 }
 
+/* Copyright text */
 .copy {
   @apply mt-8 text-sm;
 }
