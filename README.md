@@ -2,6 +2,17 @@
 
 A professional, responsive web application for a computer repair service. Built with **Next.js**, **Tailwind CSS**, and modern frontend tools. Includes a functional contact form with file attachments, dynamic sections, and smooth animations.
 
+## ✅ Quality Score (Lighthouse)
+
+This website scores **100/100** in the following Lighthouse categories:
+
+- ✅ Performance  
+- ✅ Accessibility  
+- ✅ Best Practices  
+- ✅ SEO
+
+> Verified using Chrome DevTools – Lighthouse audit.
+
 ## 🔗 Live Demo
 
 👉 [Visit the live site](https://nsk-serwis.pl) 
