@@ -13,7 +13,7 @@ This website scores **100/100** in the following Lighthouse categories:
 
 > Verified using Chrome DevTools – Lighthouse audit.
 
-## 🔗 Live Demo
+## 🔗 Live website
 
 👉 [Visit the live site](https://nsk-serwis.pl) 
 
